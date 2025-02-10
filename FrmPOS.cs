@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -208,6 +209,7 @@ namespace WinForm.Minimart
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            string msg = "";  
             int lastOrderID = 0;
             if(txtEmployeeID.Text.Trim() == "")
             {
@@ -219,6 +221,7 @@ namespace WinForm.Minimart
             {
                 if (MessageBox.Show("ต้องการบันทึกรายการสั่งซื้อหรือไม่", "กรุณายืนยัน", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+
                     conn.Open();
                     tr = conn.BeginTransaction(); 
                     string sql = "insert into Receipts(ReceiptDate, EmployeeID, TotalCash) values (getdate(),@EmployeeID,@TotalCash)"; 
@@ -237,6 +240,8 @@ namespace WinForm.Minimart
                         lastOrderID = dr.GetInt32(dr.GetOrdinal("ReceiptID")); 
                     } 
                     dr.Close();
+                    msg += "ผู้ขาย: " + txtEmployeeName.Text + Environment.NewLine;
+                    msg += "หมายเลขใบสั่งซื้อ: " + lastOrderID.ToString() + Environment.NewLine;
                     //เพิ่มข้อมูลรายการสินค้า OrderDetail ที่ตรงกับ lastOrderID
                     for (int i = 0; i <= IsvProducts.Items.Count - 1; i++)
                     {
@@ -249,8 +254,9 @@ namespace WinForm.Minimart
                         comm3.ExecuteNonQuery();
                     }
                     tr.Commit(); 
-                    conn.Close(); 
-                    MessageBox.Show("บันทึกรายการขายเรียบร้อยแล้ว", "ผลการทํางาน"); 
+                    conn.Close();
+                    msg += "\nยอดรวมทั้งหมด: " + lblNetPrice.Text;
+                    MessageBox.Show(msg, "บันทึกรายการขายเรียบร้อยแล้ว");
                 } 
                 btnCancel.PerformClick(); //สั่งให้ไปกดปุ่ม cancel เคลีย์หน้าจอทั้งหมดใหม่เพื่อเริ่มรายการใหม่
             }
