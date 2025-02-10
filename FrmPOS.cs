@@ -214,7 +214,7 @@ namespace WinForm.Minimart
             if(txtEmployeeID.Text.Trim() == "")
             {
                 MessageBox.Show("โปรดระบุผู้ขายสินค้าก่อน", "มีข้อผิดพลาด");
-                txtEmployeeID.Focus();
+                //txtEmployeeID.Focus();
                 return;
             }
             if(IsvProducts.Items.Count >0)
@@ -256,7 +256,7 @@ namespace WinForm.Minimart
                     tr.Commit(); 
                     conn.Close();
                     msg += "\nยอดรวมทั้งหมด: " + lblNetPrice.Text;
-                    MessageBox.Show(msg, "บันทึกรายการขายเรียบร้อยแล้ว");
+                    MessageBox.Show(msg,"บันทึกรายการขายเรียบร้อยแล้ว");
                 } 
                 btnCancel.PerformClick(); //สั่งให้ไปกดปุ่ม cancel เคลีย์หน้าจอทั้งหมดใหม่เพื่อเริ่มรายการใหม่
             }

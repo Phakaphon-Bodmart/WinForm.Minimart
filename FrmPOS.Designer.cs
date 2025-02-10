@@ -90,7 +90,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(667, 9);
+            label3.Location = new Point(627, 9);
             label3.Name = "label3";
             label3.Size = new Size(71, 20);
             label3.TabIndex = 4;
@@ -99,9 +99,9 @@
             // lblNetPrice
             // 
             lblNetPrice.BackColor = Color.LightCoral;
-            lblNetPrice.Font = new Font("Tw Cen MT Condensed Extra Bold", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNetPrice.Font = new Font("Tw Cen MT Condensed Extra Bold", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNetPrice.ForeColor = Color.White;
-            lblNetPrice.Location = new Point(646, 35);
+            lblNetPrice.Location = new Point(614, 35);
             lblNetPrice.Name = "lblNetPrice";
             lblNetPrice.Size = new Size(238, 49);
             lblNetPrice.TabIndex = 5;
@@ -123,7 +123,7 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Location = new Point(12, 105);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(648, 467);
+            groupBox1.Size = new Size(666, 488);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "รายการสั่งซื้อ";
@@ -132,7 +132,7 @@
             // 
             IsvProducts.Location = new Point(6, 110);
             IsvProducts.Name = "IsvProducts";
-            IsvProducts.Size = new Size(636, 351);
+            IsvProducts.Size = new Size(654, 372);
             IsvProducts.TabIndex = 16;
             IsvProducts.UseCompatibleStateImageBehavior = false;
             IsvProducts.DoubleClick += IsvProducts_DoubleClick;
@@ -224,43 +224,47 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(693, 138);
+            btnAdd.BackColor = Color.Bisque;
+            btnAdd.Location = new Point(717, 161);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(94, 29);
+            btnAdd.Size = new Size(117, 47);
             btnAdd.TabIndex = 7;
             btnAdd.Text = "เพิ่ม";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(693, 205);
+            btnClear.BackColor = Color.Bisque;
+            btnClear.Location = new Point(717, 222);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(94, 29);
+            btnClear.Size = new Size(117, 52);
             btnClear.TabIndex = 8;
             btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
+            btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
             // 
             // btnSave
             // 
+            btnSave.BackColor = Color.Bisque;
             btnSave.Enabled = false;
-            btnSave.Location = new Point(693, 289);
+            btnSave.Location = new Point(717, 293);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(158, 49);
+            btnSave.Size = new Size(117, 52);
             btnSave.TabIndex = 9;
             btnSave.Text = "บันทึก";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(693, 372);
+            btnCancel.BackColor = Color.Bisque;
+            btnCancel.Location = new Point(699, 364);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(158, 32);
+            btnCancel.Size = new Size(153, 45);
             btnCancel.TabIndex = 10;
             btnCancel.Text = "ยกเลิกรายการสั่งซื้อ";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // FrmPOS
@@ -268,7 +272,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(907, 605);
+            BackColor = SystemColors.ButtonFace;
+            ClientSize = new Size(870, 605);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(btnClear);
